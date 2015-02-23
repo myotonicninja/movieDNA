@@ -10,7 +10,7 @@
     */
     var arrMovieDb =  {
       "movies": [
-        {  "title":  "The Lord of the Rings: Return of the King" , "id": 1 },
+        {  "title":  "The Lord of the Rings: Return of the King" , "id": 1, "img": "http://ia.media-imdb.com/images/M/MV5BMjE4MjA1NTAyMV5BMl5BanBnXkFtZTcwNzM1NDQyMQ@@._V1_SX640_SY720_.jpg" },
         {  "title":  "The Dark Night", "id": 2  },
         {  "title":  "Eternal Sunshine of the Spotless Mind", "id": 3  },
         {  "title":  "The Departed", "id": 4  },
@@ -37,8 +37,9 @@
     <script id="movies-selector" type="text/x-handlebars-template">
       <h1>First choose any movies in this list you've seen...</h1>
       <ul id="picksome">
-        {{#each movies}}
-          <li><input type="checkbox" id="{{id}}" name="movie-selection"><label for="{{id}}">{{title}}</label></li>
+       {{#each movies}}
+          <li><input type="checkbox" id="{{id}}" name="movie-selection">
+          <label for="{{id}}"><img src={{img}}>{{title}}</label></li>
         {{/each}}
       </ul>
     </script>

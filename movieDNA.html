@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -34,23 +35,82 @@
     </script>
 
     <script id="movies-selector" type="text/x-handlebars-template">
-      <select>
+      <h1>First choose any movies in this list you've seen...</h1>
+      <ul id="picksome">
         {{#each movies}}
-          <option>{{title}}</option>
+          <li><input type="checkbox" id="{{id}}" name="movie-selection"><label for="{{id}}">{{title}}</label></li>
         {{/each}}
-      </select>
+      </ul>
     </script>
   </head>
   <body>
-    <h1>First choose your top 5 favorite movies in any order.</h1>
-    <div id="main">
 
+    <button id="doneWithMoviesSeen">Done.</button>
+    <div id="which-movies-seen">
+    </div>
+    <div id="order-movies" class="secret">
+      <h1>Viola!</h1>
     </div>
 
     <script>
       var source   = document.querySelector("#movies-selector").innerHTML;
       var template = Handlebars.compile(source);
-      document.querySelector("#main").innerHTML = template(arrMovieDb);
+      document.querySelector("#which-movies-seen").innerHTML = template(arrMovieDb);
+      
+      document.addEventListener(
+  "DOMContentLoaded", 
+   function () {
+      var doneWithSeenButton =
+          document.querySelector(
+              "#doneWithMoviesSeen"
+          );
+
+			doneWithSeenButton
+      	.addEventListener(
+   				"click", 
+        	function () {
+     				console.log("which ones were checked? %o",  document.querySelectorAll("#picksome input:checked"));
+            var next = document.querySelector("#order-movies");
+            var current  = document.querySelector("#which-movies-seen");
+            current.classList.add("secret");   
+            next.classList.remove("secret");
+  				}, 
+        	false
+      );
+   }, 
+   false
+);
     </script>
+    
+    <style>
+      .secret {
+   display: none;
+}
+
+#picksome li input {
+    display: none;
+}
+
+
+#picksome li {
+   display: block;
+   float: left;
+   width: 15em;
+   height: 5em;
+   margin: 1em;
+}
+
+#picksome label {
+     display: block;
+     padding: 1em;
+     border: 1px solid black;
+}
+
+#picksome input:checked+label {
+  background-color: blue;
+  color: white;
+}
+    </style>
+    
   </body>
 </html>

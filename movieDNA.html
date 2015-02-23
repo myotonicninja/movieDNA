@@ -12,28 +12,47 @@
       "movies": [
         {  "title":  "The Lord of the Rings: Return of the King" , "id": 1, 
         "img": "http://ia.media-imdb.com/images/M/MV5BMjE4MjA1NTAyMV5BMl5BanBnXkFtZTcwNzM1NDQyMQ@@._V1_SX640_SY720_.jpg" },
-        {  "title":  "The Dark Night", "id": 2  },
-        {  "title":  "Eternal Sunshine of the Spotless Mind", "id": 3  },
-        {  "title":  "The Departed", "id": 4  },
-        {  "title":  "Memento", "id": 5  },
-        {  "title":  "Spirited Away", "id": 6  },
-        {  "title":  "The Bourne Ultimatum", "id": 7  },
-        {  "title":  "The Lord of the Rings: The Two Towers", "id": 8  },
-        {  "title":  "Almost Famous", "id": 9  },
-        {  "title":  "Finding Nemo",  "id": 10  },
-        {  "title":  "Hot Fuzz", "id": 11  },
-        {  "title":  "No Country for Old Men", "id": 12  },
-        {  "title":  "Catch Me If You Can", "id": 13  },
-        {  "title":  "Shaun of the Dead", "id": 14  },
-        {  "title":  "The Hurt Locker", "id": 15  },
-        {  "title":  "There Will Be Blood", "id": 16  },
-        {  "title":  "Before Sunset", "id": 17  },
-        {  "title":  "Slumdog Millionaire", "id": 18  },
-        {  "title":  "Old Boy", "id": 19  },
-        {  "title":  "City of God", "id": 20  }
+          
+        {  "title":  "The Dark Night", "id": 2, "img": "http://www.counter-currents.com/wp-content/uploads/2010/09/The-Dark-Knight-poster.jpg" },
+          
+        {  "title":  "Eternal Sunshine of the Spotless Mind", "id": 3, "img": "http://upload.wikimedia.org/wikipedia/en/6/62/Eternal_sunshine_of_the_spotless_mind_ver3.jpg" },
+          
+        {  "title":  "The Departed", "id": 4, "img": "http://i.imgur.com/KM3yW.jpg" },
+          
+        {  "title":  "Memento", "id": 5, "img": "http://www.publispain.com/posters/memento.jpg" },
+          
+        {  "title":  "Spirited Away", "id": 6, "img": "http://ia.media-imdb.com/images/M/MV5BMjYxMDcyMzIzNl5BMl5BanBnXkFtZTYwNDg2MDU3._V1_SX640_SY720_.jpg"  },
+          
+        {  "title":  "The Bourne Ultimatum", "id": 7, "img": "http://cdn.collider.com/uploads/imagegallery/bourne_ultimatum/the_bourne_ultimatum_movie_poster__1_.jpg"  },
+          
+        {  "title":  "The Lord of the Rings: The Two Towers", "id": 8, "img": "http://img4.wikia.nocookie.net/__cb20150203041214/lotr/images/9/98/The_two_tower.jpg"  },
+          
+        {  "title":  "Almost Famous", "id": 9, "img": "http://3.bp.blogspot.com/-j8nPeCZVKd8/UDA-zbLPQ-I/AAAAAAAAA4k/47s48iuLe6c/s1600/casi_famosos_2000_5.jpg"  },
+          
+        {  "title":  "Finding Nemo",  "id": 10, "img": "http://static1.squarespace.com/static/52875bf0e4b0b40559bc2145/t/53824617e4b068e56bb651f2/1401046552428/"  },
+          
+        {  "title":  "Hot Fuzz", "id": 11, "img": "http://cdn.collider.com/uploads/imageGallery/Hot_Fuzz/hot_fuzz_poster_one_sheet.jpg"  },
+          
+        {  "title":  "No Country for Old Men", "id": 12, "img": "http://upload.wikimedia.org/wikipedia/en/8/8b/No_Country_for_Old_Men_poster.jpg"  },
+          
+        {  "title":  "Catch Me If You Can", "id": 13, "img": "http://moeatthemovies.com/wp-content/uploads/2012/07/catch_me_if_you_can_xlg.jpg"  },
+          
+        {  "title":  "Shaun of the Dead", "id": 14, "img": "http://doublefeatureshow.com/images/covers/shaun-of-the-dead.jpg"  },
+          
+        {  "title":  "The Hurt Locker", "id": 15, "img": "http://2.bp.blogspot.com/-A6aHS8khNB4/TxVNTzK94sI/AAAAAAAAAIo/V7kHGC-HCow/s1600/Untitled.jpg"  },
+          
+        {  "title":  "There Will Be Blood", "id": 16, "img": "http://ia.media-imdb.com/images/M/MV5BMjA0NjE1ODEyNV5BMl5BanBnXkFtZTcwNDIzMzE5NQ@@._V1_SX640_SY720_.jpg"  },
+          
+        {  "title":  "Before Sunset", "id": 17, "img": "http://maxcdn.dardarkom.com/files/uploads/13664053491.jpg"  },
+          
+        {  "title":  "Slumdog Millionaire", "id": 18, "img": "http://moviesmedia.ign.com/movies/image/object/142/14277871/SLUMDOGmaster.jpg"  },
+          
+        {  "title":  "Old Boy", "id": 19, "img": "http://www.dvd-forum.at/img/uploaded/hr_Oldboy_2.jpg"  },
+          
+        {  "title":  "City of God", "id": 20, "img": "http://iv1.lisimg.com/image/237802/600full-city-of-god-cover.jpg"  }
       ]
     };
-    </script>
+</script>
 
     <script id="movies-selector" type="text/x-handlebars-template">
       <h1>First choose any movies in this list you've seen...</h1>
@@ -55,7 +74,7 @@
     </div>
 
     <script>
-      var source   = document.querySelector("#movies-selector").innerHTML;
+      var source = document.querySelector("#movies-selector").innerHTML;
       var template = Handlebars.compile(source);
       document.querySelector("#which-movies-seen").innerHTML = template(arrMovieDb);
       
@@ -71,48 +90,61 @@
       	.addEventListener(
    				"click", 
         	function () {
-     				console.log("which ones were checked? %o",  document.querySelectorAll("#picksome input:checked"));
+     			console.log("which ones were checked? %o",                      document.querySelectorAll("#picksome input:checked"));
             var next = document.querySelector("#order-movies");
             var current  = document.querySelector("#which-movies-seen");
             current.classList.add("secret");   
             next.classList.remove("secret");
-  				}, 
-        	false
+  		    }, 
+            false
       );
    }, 
    false
 );
     </script>
     
-    <style>
-      .secret {
-   display: none;
+<style>
+    
+h1{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    color: grey;
 }
-
-#picksome li input {
+    
+.secret {
+    display: none;
+}
+    
+#picksome li input{
     display: none;
 }
 
-
-#picksome li {
-   display: block;
-   float: left;
-   width: 15em;
-   height: 5em;
-   margin: 1em;
+#picksome li{
+    display: block;
+    float: left;
+    width: 15em;
+    height: 25em;
+    margin: 1em;
 }
 
-#picksome label {
-     display: block;
-     padding: 1em;
-     border: 1px solid black;
+#picksome img{
+    width: 13em;
+    height: 20em;
 }
 
-#picksome input:checked+label {
-  background-color: blue;
+#picksome label{
+    display: block;
+    padding: 1em;
+    background-color: #dbdbdb;
+}
+
+#picksome input:checked+label{
+  background-color: #85BF25;
   color: white;
 }
-    </style>
+    
+</style>
     
   </body>
 </html>

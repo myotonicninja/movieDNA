@@ -76,6 +76,9 @@
     <script>
       var source = document.querySelector("#movies-selector").innerHTML;
       var template = Handlebars.compile(source);
+      var next = document.querySelector("#order-movies");
+      var current = document.querySelector("#which-movies-seen");
+        
       document.querySelector("#which-movies-seen").innerHTML = template(arrMovieDb);
       
       document.addEventListener(
@@ -91,8 +94,6 @@
    				"click", 
         	function () {
      			console.log("which ones were checked? %o",                      document.querySelectorAll("#picksome input:checked"));
-            var next = document.querySelector("#order-movies");
-            var current  = document.querySelector("#which-movies-seen");
             current.classList.add("secret");   
             next.classList.remove("secret");
   		    }, 
@@ -119,9 +120,9 @@ h1{
 #picksome li input{
     display: none;
 }
-
+   
 #picksome li{
-    display: block;
+    display: flex;
     float: left;
     width: 15em;
     height: 25em;
@@ -131,14 +132,17 @@ h1{
 #picksome img{
     width: 13em;
     height: 20em;
+    padding-bottom: 1em;
 }
 
 #picksome label{
     display: block;
     padding: 1em;
     background-color: #dbdbdb;
-}
-
+    font-family: sans-serif;
+    text-align: center;   
+}    
+    
 #picksome input:checked+label{
   background-color: #85BF25;
   color: white;

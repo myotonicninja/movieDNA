@@ -58,7 +58,7 @@
       <h1>First choose any movies in this list you've seen...</h1>
       <ul id="picksome">
        {{#each movies}}
-          <li><input type="checkbox" id="{{id}}" name="movie-selection">
+          <li><input type="checkbox" value="{{id}}" id="{{id}}" name="movie-selection">
           <label for="{{id}}"><img src={{img}}>{{title}}</label></li>
         {{/each}}
       </ul>
@@ -93,11 +93,18 @@
       	.addEventListener(
    				"click", 
         	function () {
-     			console.log("which ones were checked? %o",                      document.querySelectorAll("#picksome input:checked"));
+                var $selected = document.querySelectorAll("#picksome input:checked");
+                var ids = [];
+                for (var i = 0; i < $selected.length; i++){
+                    ids.push($selected[i].value);
+                }
+                
+                
+     			console.log("which ones were checked? %o",                              document.querySelectorAll("#picksome input:checked"));
             current.classList.add("secret");   
             next.classList.remove("secret");
-  		    }, 
             false
+            }
       );
    }, 
    false

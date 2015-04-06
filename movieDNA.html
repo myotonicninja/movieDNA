@@ -79,6 +79,19 @@
       var next = document.querySelector("#order-movies");
       var current = document.querySelector("#which-movies-seen");
         
+    function filterMoviesByIds(allmovies, ids){
+        var matches = [];
+        for (var i = 0; i < allmovies.length; i++){
+            var movie = allmovies[i];
+            
+           if(ids.indexOf(movie.id) > -1 ){
+            matches.push(movie);   
+               
+           }
+        }
+        return matches
+    };
+        
       document.querySelector("#which-movies-seen").innerHTML = template(arrMovieDb);
       
       document.addEventListener(
@@ -96,15 +109,20 @@
                 var $selected = document.querySelectorAll("#picksome input:checked");
                 var ids = [];
                 for (var i = 0; i < $selected.length; i++){
-                    ids.push($selected[i].value);
+                    ids.push(parseInt($selected[i].value));
                 }
                 
                 
-     			console.log("which ones were checked? %o",                              document.querySelectorAll("#picksome input:checked"));
+                var selectedmovies=filterMoviesByIds(arrMovieDb.movies, ids);
+                console.log("which ones were checked? %o",                              document.querySelectorAll("#picksome input:checked"));
             current.classList.add("secret");   
             next.classList.remove("secret");
+            console.log(selectedmovies);
             false
             }
+                
+                
+                
       );
    }, 
    false
